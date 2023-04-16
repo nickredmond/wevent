@@ -1,0 +1,10 @@
+.header {
+    background-color: #444;
+    height: calc(2rem + 2.5vw);
+
+    .logo {
+        margin: calc(0.2rem + 0.25vw);
+        height: 80%;
+        width: auto;
+    }
+}
