@@ -5,7 +5,7 @@ import headerLogo from "../public/images/wevent.png";
 export function Header() {
     return (
         <div className={styles.header}>
-            <a href="">
+            <a href="/">
                 <Image 
                     src={headerLogo}
                     alt="logo"

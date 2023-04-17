@@ -1,32 +1,28 @@
 import Image from "next/image";
 import styles from "../styles/primaryButton.module.scss";
+import Link from "next/link";
 
-export function PrimaryButton({ text, iconSrc, hoverIconSrc, iconAlt }) {
+export function PrimaryButton({ text, iconSrc, hoverIconSrc, iconAlt, href }) {
     const alternateText = iconAlt ?? 'button icon';
-    // const hoverStyleText = hoverIconSrc && `
-    //     .${styles.icon}:after {background: url('/images/${hoverIconSrc}'); opacity: 0;}
-    //     .${styles.icon}:hover:after {opacity: 1;}
-    // `;
+    const buttonText = <div>{text}
+        {iconSrc && <Image 
+            src={`/images/${iconSrc}`} 
+            width={50} 
+            height={50} 
+            className={styles.icon} 
+            alt={alternateText} />}
+        {hoverIconSrc && <Image
+            src={`/images/${hoverIconSrc}`}
+            width={50}
+            height={50}
+            className={[styles.icon, styles.iconHover].join(" ")}
+            alt={alternateText} />}</div>;
+    const buttonContents = href ? <Link href={href}>{buttonText}</Link> : buttonText;
     return (
         <div>
             <button className={styles.button} type="button">
-                {text}
-                {iconSrc && <Image 
-                    src={`/images/${iconSrc}`} 
-                    width={50} 
-                    height={50} 
-                    className={styles.icon} 
-                    alt={alternateText} />}
-                {hoverIconSrc && <Image
-                    src={`/images/${hoverIconSrc}`}
-                    width={50}
-                    height={50}
-                    className={[styles.icon, styles.iconHover].join(" ")}
-                    alt={alternateText} />}
+                {buttonContents}
             </button>
-        {/* {hoverStyleText && <style>
-                {hoverStyleText}
-            </style>} */}
         </div>
     );
 }
