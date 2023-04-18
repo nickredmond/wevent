@@ -1,11 +1,30 @@
 .primaryText {
-
+    font-size: calc(1rem + 2vw);
+    font-weight: bold;
 }
 
 .secondaryText {
-
+    font-size: calc(1rem + 1vw);
 }
 
-.link {
-    
+.inputLabel {
+    margin: 0 0 0.5rem 0;
+    font-size: calc(1rem + 1vw);
+}
+
+.inputCaption {
+    margin: 0.5rem 0 0 0;
+    font-size: calc(1rem + 0.5vw);
+    color: #666;
+    font-style: italic;
+}
+
+.textInput,.textArea {
+    width: 90vw;
+    font-size: calc(1rem + 0.75vw);
+    padding: 0.25rem;
+}
+
+.fieldGroup {
+    margin-bottom: 1.5rem;
 }

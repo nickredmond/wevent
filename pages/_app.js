@@ -1,13 +1,11 @@
 import "../styles/global.scss";
-import { Header } from "../components/Header";
-import { Home } from "./Home";
+import Layout from "../components/Layout";
 
-
-export default function App() {
+const App = ({Component, pageProps}) => {
     return (
-        <div>
-            <Header />
-            <Home />
-        </div>
+        <Layout>
+            <Component {...pageProps} />
+        </Layout>
     );
-}
+};
+export default App;
